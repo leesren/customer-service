@@ -1,0 +1,8 @@
+/* 分享 */
+.sr-share{ display: none; position: fixed; top: 50%; left: 50%; width: 8.2667rem; height: 5.3333rem; max-height: 300px; margin-left: -4.1333rem; margin-top: -2.6667rem; background: #25224D; border-radius: 3px; z-index: 101;}
+.sr-share .title{ margin-top: 40px; line-height: 1; text-align: center; font-size: 14px;
+color: rgba(255,255,255,0.40);}
+.sr-share .share-list{ display: flex; flex-direction: row; margin-top: 15px;}
+.sr-share .list-item{ flex: 1; width: 60px; padding: 15px 0; color: rgba(255,255,255,0.80); font-size: 12px; text-align: center; cursor: pointer; -webkit-tap-highlight-color: rgba(255,255,255,.1);}
+.sr-share .list-item .icon{ display: block; width: 40px; margin: 0 auto 8px;}
+.sr-share .close-btn{ position: absolute; top: 5px; right: 5px; width: 30px; height: 30px; background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABE0lEQVRIS82XMRICMQhFP4V30MI7eAgbC09rYeMhvIOF3sEiDjPEyWqWQETjllmWl0+AJQQAKaUVgA2AExHdeS36SSktAGwBnInoSgLdC+gG4BgNF+gOwFI4BwbzwrpQGAqvQBl1YTCHoNwNvwiBq77ljMPhLUGUQ9wy9CSbxdcTHKXcAmXWBPwp3AqtgnvhHugs2Av3QlWwFd4DbYJbcMn0rh7wlly1slFUsXlug67GYwIryst9urqdGdyAu6CmMy4lzYTcFeLsz6xYgWZfLtUm8JDk0ur0a+VkaQ4Wm1qJzoba49BjqyZXjyPvN//xW/Tu2tleJ9Pr2NEnQumr+pbPcePtyIGe702/v8LI7+7nl7YHBXAw6miGhfsAAAAASUVORK5CYII=") no-repeat center; background-size: 10px 10px; cursor: pointer; -webkit-tap-highlight-color: rgba(255,255,255,.1);}

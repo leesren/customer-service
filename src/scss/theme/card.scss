@@ -1,0 +1,931 @@
+// 卡片场景样式
+
+$main-color: #f6933f;
+$border-color: #e8e9eb;
+
+.dialog{
+    // 1.个股行情
+    .quotation{
+        .stock-info{ max-height: 70px; margin-top: 10px; font-size: 14px; overflow: hidden;}
+        .quotation-value{
+            margin-bottom: 2px;
+            em,
+            small{ padding-right: 8px;}
+        }
+        .quotation-link{ display: block; margin-bottom: 15px; cursor: pointer;}
+        .quotation-graph{ width: 100%; height: 140px; margin-top: -5px; background: #f9f9f9; color: #999999; line-height: 115px; text-align: center; font-size: 14px;}
+        .suspended{ color: #999999; font-size: 12px;}
+        // svg
+        .quotation-graph{
+            circle.breathe{ animation: sr-breathe 2s infinite ease-in-out both; transform-origin: center center;}
+            .current-price-shadow{ fill: #c5e3f7;}
+        }
+    }
+
+    // 2.个股诊断
+    .diagnose{
+        .detail{
+            dl{ margin-bottom: 12px; line-height: 20px; font-size: 15px;}
+            dt{ float: left; width: 78px; padding-top: 1px; color: #808080; font-size: 13px;}
+            dd{ color: #000000; text-align: justify; overflow: hidden; font-size: 15px;}
+            dl:nth-of-type(1) dd,
+            dl:nth-of-type(2) dd{ font-weight: 600; font-size: 16px;}
+            dl:last-of-type{ margin-bottom: 0;}
+        }
+    }
+    
+    // 3.新闻 
+    // 4.公告 
+    // 5.研报
+    .news{
+        .news-list{
+            margin-top: 4px;
+            &:empty{ display: none;}
+            .list-item{
+                position: relative;
+                &::after{ @extend %top-border; border-top-color: #e3e4e5;}
+                &:first-of-type::after{ border: none;}
+                &:last-of-type{
+                    .info{ padding: 8px 0 0;}
+                }
+                a{ display: block; padding: 7px 0; overflow: hidden; font-size: 16px;}
+                .info{
+                    padding: 8px 0 4px; font-size: 12px; color: #999999; line-height: 1;
+                    .state{
+                        float: right;
+                        span{ font-weight: normal;}
+                    }
+                    .source{ padding-right: 10px;}
+                }
+            }
+        }
+        .more.only{ margin-top: 5px!important;}
+    }
+    
+    // 26.机构关注股票
+    .org-concerned{
+        .sr-table{
+            .v2,
+            .v4{ color: #ea4c2d;}
+            .v3{ color: #000000;}
+        }
+    }
+
+    // 29.新股
+    .ipo-stock{
+        .sr-table{
+            .date{ width: 50%; text-align: left;}
+        }
+    }
+
+    // 30.智能组合
+    .stock-combination{
+        padding: inherit 10px; color: #666666;
+        .more{ margin: 0 -10px;}
+        .risk-level{ margin-top: 10px;}
+        .risk-level,
+        .risk-preference{ height: 30px; line-height: 30px; font-size: 15px; font-weight: 600;}
+        .risk-level .level,
+        .risk-preference .preference{ color: #fb7f43; font-size: 15px;}
+        .combination{
+            margin-bottom: 15px; padding-top: 10px; line-height: 16px; font-size: 12px;
+            .matching-rate{ padding: 0 4px; color: #fb7f43; white-space: nowrap;}
+            .combo-box{ display: block; position: relative; margin-top: 6px; padding: 14px 11px 14px 90px; background: #ecf9eb; cursor: pointer;}
+            .revenue{
+                position: absolute; top: 0; bottom: 0; left: 0; width: 79px; padding-top: 20px; color: #999999; text-align: center;
+                .precent{ display: block; margin-bottom: 6px; font-size: 16px;}
+            }
+            .name{ height: 19px; margin-bottom: 3px; padding-top: 1px; color: #333333; line-height: 1; font-size: 15px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;}
+            .desc{ display: -webkit-box; height: 32px; color: #666666; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis; overflow: hidden;}
+        }
+    }
+    
+    // 32.个股资金
+    .stock-funds{
+        .sr-table td{ width: 80px; height: 47px; font-size: 18px;}
+    }
+
+    // 33.股价预测
+    .predict-price{
+        .rise-chart{ width: 105px; height: 105px; margin: 0 auto;}
+        .rise{
+            margin-bottom: 19px; padding: 0 15px;
+            .title{ position: relative; margin-bottom: 20px; padding-top: 20px; color: #000000; line-height: 1; text-align: center; font-size: 15px;}
+            .section{
+                height: 142px; margin-top: 20px; padding-top: 20px; text-align: center; border-top: 1px dashed #e8e9eb; overflow: hidden;
+                h3{ margin-bottom: 35px; color: #333333; line-height: 1; font-size: 14px;}
+                .pro-box{
+                    position: relative; width: 100%; margin: 0 auto;
+                    .progress{ width: 100%; height: 10px; border-radius: 10px; background-image: linear-gradient(90deg, #13bf14 0%, #ffcc02 50%, #fa6a26 100%);}
+                    .pointer{
+                        box-sizing: content-box; position: absolute; top: -2px; width: 12px; height: 12px; padding-right: 12px; text-align: right;
+                        &::after{ position: absolute; top: -1px; right: 0; width: 14px; height: 14px; background: #fff; border: 1px solid #e3e4e5; border-radius: 100%; content: "";}
+                    }
+                    .low{
+                        position: absolute; top: 15px; left: 0; height: 40px; color: #999999; line-height: 14px; text-align: left; font-size: 11px;
+                        &::after{ position: absolute; top: -7px; left: 0; @extend %triangle; border-bottom-color: #13be13; content: "";}
+                        .num{ padding-top: 7px; margin-bottom: 3px; color: #13be13; font-size: 14px;}
+                    }
+                    .high{ 
+                        position: absolute; top: 15px; right: 0; height: 40px; color: #999999; line-height: 14px; text-align: right; font-size: 11px; z-index: 10;
+                        &::after{ position: absolute; top: -7px; right: 0; @extend %triangle; border-bottom-color: #ff0a00; content: "";}
+                        .num{ padding-top: 7px; margin-bottom: 3px; color: #ff0a00; font-size: 14px;}
+                    }
+                    .price{
+                        position: absolute; top: -20px; line-height: 14px; text-align: right; font-size: 14px; white-space: nowrap;
+                        .wd{ margin-right: 4px; color: #333; font-size: 11px;}
+                    }
+                }
+            }
+        }
+        .future-rise{
+            margin-bottom: 15px; border-top: 1px dashed #e8e9eb;
+            h3{ margin: 20px 0; color: #333333; text-align: center; font-size: 15px;}
+        }
+        .rise-progress{
+            margin-bottom: 15px; overflow: hidden;
+            &:last-of-type{ margin-bottom: 0;}
+            .day{ float: left; margin-top: -3px; color: #808080; font-size: 12px;}
+            .rise-box{ box-sizing: border-box; float: right; width: 87%; height: 15px; background: #efefef; border-radius: 0 7px 7px 0; color: #ffffff; text-align: right; font-size: 10px; overflow: hidden;}
+            .progress{
+                display: flex; position: relative; width: 0; height: 15px; background: #ffb400; border-radius: 0 7px 7px 0; align-items: center; justify-content: flex-end;
+                &.medium{ background: #ff7200;}
+                &.high{ background: #ff4800;}
+            }
+            .scale{ display: inline-block; min-width: 60px; height: 15px; padding-right: 4%; line-height: 15px; text-align: right; font-weight: 600;}
+            .scale-right{ position: absolute; right: -65px; color: #333333; text-align: left;}
+        }
+        // svg
+        .svg-pie{
+            width: 105px; height: 105px;
+            .percent-text{ font-size: 15px; fill: #808080;}
+            circle{
+                transition: stroke-dasharray .4s;
+                &.ring{ stroke: #ff7200;}
+                &.circle-ring{ stroke: #7ab3fb;}
+            }
+        }
+    }
+
+    // 35.相似K线
+    .predict-kline{
+        .predict-info{
+            display: flex; margin: 11px 0 12px; justify-content: center; align-items: center;
+            .item{ line-height: 1; text-align: center; flex: 1; font-size: 19px;}
+            .item p{ font-weight: 600;}
+            .wd{ color: #888888; font-size: 12px;}
+        }
+        .description{
+            margin-top: 5px; margin-bottom: 13px; color: #333333; line-height: 22px; text-align: justify; font-size: 16px;
+            .num{ font-weight: 600;}
+            span{ padding: 0 4px; white-space: nowrap;}
+        }
+        .strong,
+        .strong span{ font-weight: 600;}
+        .candle-chart{
+            overflow: visible;
+            rect,
+            line{ shape-rendering: crispEdges;}
+            .axis text{ fill: #999999;}
+            .axis path{ stroke: #e1e1e1;}
+            .shadow{ stroke-width: 1px; fill: none;}
+            .tick line{ stroke: #e1e1e1;}
+            .predict{ fill: #e7f2fc; fill-opacity: .6;}
+            .ceil,
+            .flor,
+            .profit{ shape-rendering: auto;}
+            .ceil,
+            .flor{ stroke: #80b5ff; fill: none;}
+            .profit{ stroke: #e63232; fill: none;}
+            .volume{ stroke: #e1e1e1; fill: none;}
+            .none{ display: none;}
+            .poly path{ shape-rendering: auto;}
+            .help{ stroke: #d8d8d8;}
+            .brush-bar{ fill: none; stroke: #e1e1e1;}
+            .selection{ fill: #2f84cc; opacity: .4; stroke: #000000;}
+        }
+    }
+
+    // 36.大盘风向标
+    .market-vane{
+        .market-vane-wrap{
+            margin: 0 auto; padding: 17.5px 15px 0; line-height: 1; font-size: 14px;
+            .item{ margin-bottom: 21.5px;}
+            .item:last-of-type{ margin-bottom: 15px;}
+            .advise .hd{
+                display: inline-block;
+                &::after{ content: "：";}
+            }
+        }
+        .level{
+            .hd{ margin-bottom: 12px; padding-left: 5px; font-size: 14px;}
+            .level-icon{
+                display: flex; justify-content: space-between;
+                .l1,
+                .l2,
+                .l3{ width: 60px; height: 56px; background: url("../images/level_bg.png") no-repeat; background-size: 180px 56px;}
+                .l2{ background-position: -60px 0;}
+                .l3{ background-position: -120px 0;}
+            }
+            .active-level-1 .l1{ background: url("../images/level1_active.png") no-repeat; background-size: contain;}
+            .active-level-2 .l2{ background: url("../images/level2_active.png") no-repeat; background-size: contain;}
+            .active-level-3 .l3{ background: url("../images/level3_active.png") no-repeat; background-size: contain;}
+        }
+        .price-range{
+            margin-bottom: 35px;
+            .hd{ margin-bottom: 4px; padding-left: 5px;}
+            .progress{
+                display: flex; position: relative; height: 46px; padding: 0 5px; align-items: center; font-size: 12px;
+                .hd{ margin-bottom: 35px;}
+                .progress-bar{ width: 100%; height: 10px; background-image: linear-gradient(90deg, #13bf14 0%, #ffcc02 50%, #fa6a26 100%);}
+                .high{ position: absolute; right: 5px; bottom: 1px; color: #fa6a26; font-size: 12px;}
+                .low{ position: absolute; bottom: 1px; left: 5px; color: #14bf13; font-size: 12px;}
+                .current{ position: absolute; top: 50%; width: 1px; height: 10px; margin-top: -5px; border-right: 1px solid #ffffff; color: #323232;}
+                .current .wd{ position: absolute; top: -16px; right: -30px; width: 60px; text-align: center;}
+            }
+        }
+        .charts{
+            display: flex; height: 79px; padding: 0 5px; justify-content: space-between; overflow: hidden;
+            .chart-wrap{
+                position: relative; width: 102px; text-align: center;
+                .hd{ margin-bottom: 14.5px; line-height: 1;}
+                .value{ position: absolute; bottom: 0; width: 100%; color: #888888; text-align: center; font-size: 13px;}
+                .up-prob,
+                .advise-position,
+                .svg-pie{
+                    width: 100%; height: 100%;
+                    .circle-ring{ stroke: #7ab3fb;}
+                    .ring{ stroke: #ea4c2d;}
+                    .circle-ring,
+                    .ring{ transition: stroke-dasharray .4s;}
+                }
+                .advise-tip{ color: #666666;}
+                .advise-strategy{ color: #333333;}
+            }
+        }
+    }
+    // @media only screen and (min-device-width: 240px) and (max-device-width: 320px){
+    //     /*iPhone 5*/
+    //     .market-vane .market-vane-wrap{ padding: 15px 10px 0;}
+    //     .market-vane .chart-wrap{ width: 90px;}
+    //     .market-vane .up-prob,
+    //     .market-vane .advise-position{ width: 90px; height: 90px;}
+    //     .market-vane .charts{ height: 74px; padding: 0 10px;}
+    // }
+
+    // 37.投资日历
+    .invest-calendar-list{
+        font-size: 15px;
+        .tag{
+            width: 55px; height: 20px; margin-bottom: 10px; background: #dddddd; border-radius: 2px; color: #ffffff; line-height: 20px; text-align: center; font-size: 12px;
+            &.zdhy{ background: #7969ba;}
+            &.xg{ background: #b675ed;}
+            &.tfp{ background: #ee874e;}
+            &.agcb{ background: #ed6ec9;}
+            &.sjfb{ background: #5b91f5;}
+            &.xstx{ background: #babcce;}
+            &.zcgh{ background: #4c44bf;}
+            &.szyw{ background: #ca4242;}
+        }
+        
+        & > .list-item{
+            position: relative; margin-right: -10px; padding: 13px 11px 10px 1px;
+            &::after{ position: absolute; top: 0; left: 0; width: 100%; content: ""; border-bottom: 1px solid #e3e4e5; transform: scaleY(.5); transform-origin: 0 0;}
+            &:first-of-type::after{ display: none;}
+        }
+        .stock-list{
+            margin-top: 5px;
+            & > .title{ display: inline-block;}
+            & > .list-item{ display: inline-block; margin-right: 10px; color: #6093fb; cursor: pointer;}
+            & > .list-item:last-of-type{ margin-right: 0;}
+        }
+        
+        .flag{
+            position: absolute; top: 16px; left: 64px; width: 60px; height: 14px; padding-left: 27px; background: #999999; line-height: 1;
+            &::after{ position: relative; top: -2px; color: #666666; font-size: 12px;}
+            &.china{
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAsCAMAAAAEqIWJAAAASFBMVEXuRFjuRFb2u0LvU1TvS1TuSFX1s0PwYlHvT1TvVlPwXVLydU3yek3zi0r1p0X2rUTxbE/zgkv2tkP0kEn0lEj0mkf0okbwWlJnsUAJAAAAAXRSTlNLoehAfgAAAPxJREFUSMftlVtvhCAUhOsAh5vcXHX//z9taRpE2weUfWiyTmLkAb6cM8PlY3iF3okiXD+FRQcXWSdFzAAe/ArFVOMnAH2lI02qIkYRzRXKjL8M1W2UuoffdsrAT1GW7OeR4SfQolopTI7IsnK/xAJgTbWo2U/YNPkqYbum0EYZ5IRaVGXD89foiyFsCvrqOdKhQPyhAXUiaVZcOdRvziStSy27RXIlhLk56VgocqiV838215IAkCMA436/eEeqmbKARjHwRHgUwI+3gjdT1i9GFh+X779gFpaJk2c6z69H2gNYO+66LTQ29FJkMkn+l5fkptyUm3JTOikv0Se8IxFk6Y2ROgAAAABJRU5ErkJggg==") no-repeat; background-size: 23px 14px;
+                &::after{ content: "中国";}
+            }
+            &.america{
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAsCAMAAAAEqIWJAAAAn1BMVEXuRFjuRFb///86f9v719v2oaryeYZvfcNjcr5nnOQ9gdtHiN1Ehd1BhNxVkOCBrejx9vyvy/BypOVbleFYk+BPjd9Lit79/f7Z5vjF2fTB1/Oqx++YvOx6qedvouVjmuJel+Ls8/zO3/a60vKVuuuRuOuGsOl3p+ZsoOTg6vmkxO6ewO2MtOr3+v7n7/rU4/fJ3PWzzfFmk9tkhtGNfbXvp5dOAAAAAXRSTlNLoehAfgAAAYtJREFUSMe81MdOxDAARVHIBYk4cXrvZSaZXuD//w1Hs2KDxhHiLLy8st/CL/zi4/VJf1Zxhh2I4gQc7yjuzYZu6LQqXV+D3B+AcUDZXhLY9TvdFwUlEPkx2L6JcnRX7OKfLXDTBqK0AkSfr6ggUezHsZBCtxLuZxDXI+DnKKfMAnNvalWiLAAxVEBZoExXC9pMr7Kwfh7YAuXz7UmPyn1ZdzICCNMjILwbimk86VFpDoBTJiDLFqWqdStitoGdA4QtShIAcpZalcbYgJ3mQOah+IYDrjHp3aW2pEPjENGZRIJ4JrZlLXV3GdMETsYMnXEAxHlYsW67BeLKArGJUKZGtxLnJjBOQFWi1IUNYR7y9f4kVWk9F+RlCRQZS6tPoPGC///rFofegtozwfG2gNiPKyruKKDNHbCKAMXfalfC73GB0j8PKNWKggsXcDQpkGaKBiTtSqGnXX6STOFRAblABxTdQuDiVhjkHW4VMbrHETseYMJGJGBgogYYNWXEmMJIDTBqyogxhSoAABKULV1HeTHAAAAAAElFTkSuQmCC") no-repeat; background-size: 23px 14px;
+                &::after{ content: "中国";}
+            }
+        }
+        .time{ position: absolute; top: 13px; right: 11px; color: #999999; font-size: 12px;}
+        .value{
+            margin: 7px 0; line-height: 1;
+            .item{
+                display: inline-block; position: relative; width: 30%; font-size: 15px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+                &::before{ position: relative; top: -1px; margin-right: 8px; color: #999999; line-height: 1; font-size: 12px;}
+                &::after{ position: absolute; top: 2px; right: 0; bottom: 2px; content: ""; border-right: 1px solid #c0c0c0; transform: scaleX(.5); transform-origin: 0 0;}
+                &:last-of-type::after{ display: none;}
+            }
+            .v1{ color: #ef7f21;}
+            .v2{ width: 40%; text-align: center;}
+            .v3{ text-align: right;}
+            .v1::before{ content: "今值";}
+            .v2::before{ content: "预期";}
+            .v3::before{ content: "前值";}
+        }
+    }
+    
+    // F10 数据 
+    // 42.分红
+    .dividend{
+        font-size: 15px;
+        .sr-table{
+            &.dividend-list{
+                .t2,
+                .v2{ text-align: left;}
+                .t1{ width: 60px;}
+                .t3{ width: 80px;}
+            }
+            td{
+                &::after{ @extend %bottom-border; border-bottom-color: #e3e4e5;}
+                &.post{ line-height: 1.2; text-align: left;}
+            }
+            tr{
+                &:last-of-type{
+                    td::after{ display: none;}
+                }
+            }
+        }
+        .summarize{
+            margin-top: 5px; line-height: 1.5;
+            & + .more{ margin-top: 10px!important;}
+        }
+    }
+
+    // 43.公司高管
+    .company-manager{
+        .sr-table{
+            font-size: 15px;
+            td{
+                &::after{ @extend %bottom-border; border-bottom-color: #e3e4e5;}
+                &.post{ line-height: 1.2; text-align: left;}
+            }
+            tr{
+                &:last-of-type{
+                    td::after{ display: none;}
+                }
+            }
+            th.post{ text-align: left;}
+            .name{ width: 60px;}
+            .holdings{ width: 82px;}
+            .salary{ width: 67px;}
+        }
+        // 47.高管学历
+        &.education{
+            .sr-table{
+                .name{ width: 80px; text-align: left;}
+                .post{ text-align: right;}
+            }
+        }
+    }
+
+    // 44.投资评级
+    .investment-rate{
+        font-size: 14px;
+        .rate{ padding-top: 10px;}
+        .level-bar{
+            display: flex; width: 200px; height: 30px; margin: 20px auto 0; flex-direction: row;
+            .level-item{
+                position: relative; padding-top: 8px; color: #808080; text-align: center; flex: 1; font-size: 12px;
+                &::before{ position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #eeeeee; content: "";}
+                &.l0::before{ background: #128e34;}
+                &.l1::before{ background: #4abb27;}
+                &.l2::before{ background: #e4d41d;}
+                &.l3::before{ background: #ff9901;}
+                &.l4::before{ background: #e94d2e;}
+                &::after{ display: none; position: absolute; top: -9px; left: 50%; margin-left: -6px; border: 6px solid transparent; content: ""; border-top-color: #808080;}
+                &.active::after{ display: block;}
+            }
+        }
+        .no-rate{ margin: 10px 0; color: #808080; text-align: center;}
+        .rate-chart{ padding: 20px 5px 30px 25px;}
+        .coord-sys{
+            display: flex; position: relative; height: 100px; border: 1px solid transparent; border-bottom-color: #e3e4e5; border-left-color: #e3e4e5;
+            &::before{ position: absolute; top: -20px; left: -24px; color: #808080; content: "家数"; font-size: 12px;}
+            .max,
+            .min{ position: absolute; left: -20px; bottom: -1px; width: 15px; color: #808080; text-align: right; font-size: 12px;}
+            .max{ bottom: auto; top: 0;}
+            .chart-item{ position: relative; text-align: center; flex: 1;}
+            .chart-item::before{ position: absolute; top: 0; bottom: 0; left: 50%; width: 15px; margin-left: -7px; background: #f4f4f4; content: "";}
+            .label,
+            .value{ position: absolute; top: -18px; left: 0; width: 100%; color: #808080; font-size: 12px;}
+            .label{ top: auto; bottom: -24px;}
+            .hp{ position: absolute; bottom: 0; left: 50%; width: 15px; height: 100%; margin-left: -7px;}
+            .h0{ background: #128e34;}
+            .h1{ background: #4abb27;}
+            .h2{ background: #e4d41d;}
+            .h3{ background: #ff9901;}
+            .h4{ background: #e94d2e;}
+        }
+    }
+    
+    // 45.盈利预测
+    .predict-profit{
+        .sr-mark{
+            .m1::before,
+            .m1::after{ background: #e94d2e;}
+            .m2::before,
+            .m2::after{ background: #5e83d6;}
+        }
+    }
+
+    // 48.十大股东
+    .stockholder{
+        .sr-table{
+            font-size: 15px;
+            .t3{ width: 60px;}
+            td{
+                &::after{ @extend %bottom-border; border-bottom-color: #e3e4e5;}
+            }
+            tr{
+                &:last-of-type{
+                    td::after{ display: none;}
+                }
+            }
+        }
+    }
+
+    // 49.市场表现
+    .stock-trend{
+        .summarize{ margin: 10px 0; font-size: 15px;}
+        .m1::before,
+        .m1::after{ background: #fead3f;}
+        .m2::before,
+        .m2::after{ background: #a891dd;}
+        .m3::before,
+        .m3::after{ background: #6db3ff;}
+        .svg-chart{
+            & + .more{ margin-top: -1px!important;}
+        }
+    }
+
+    // 54.语音下单
+    .stock-exchange{
+        .exchange-info{
+            font-size: 16px;
+            .list-item{ position: relative; margin: 20px 0; color: #808080; line-height: 1;}
+            .list-item:last-of-type{ margin-bottom: 13px;}
+            .title,
+            .value,
+            .tips,
+            .cancel{ display: inline-block; width: 49%;}
+            .value{ color: #333333; text-align: right;}
+            .tips{ width: 70%; color: #f6933f; cursor: pointer;}
+            .cancel{ width: 30%; text-align: right;}
+            .cancel-btn{ position: absolute; top: -3px; right: 0; width: 60px; padding: 4px 0; border: 1px solid #dddddd; border-radius: 15px; color: #808080; line-height: 1; font-size: 12px; cursor: pointer; text-align: center;}
+            .second{ display: inline-block; width: 12px;}
+        }
+    }
+
+    // 57.热门股票
+    .hot-stock{
+        .hot-stock-list{
+            .list-item{
+                position: relative; padding: 10px 0;
+                &::after{ @extend %bottom-border; border-bottom-color: #e3e4e5;}
+                &:last-of-type{
+                    margin-bottom: -10px;
+                    &::after{ display: none;}
+                }
+                .stock-name{ margin-bottom: 5px; line-height: 1; cursor: pointer;}
+                .now{
+                    position: relative; padding-right: 8px; margin-left: 15px; font-size: 16px;
+                    &::after{ margin-left: 2px;}
+                }
+                .dif{ display: none;}
+                .percent{ margin-left: 10px; font-size: 16px; font-weight: normal;}
+                .reason{
+                    margin-bottom: 2px; padding-left: 1px;
+                    overflow : hidden; text-overflow: ellipsis;
+                    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+                }
+                .date{ font-size: 12px; color: #{$gray-font};}
+            }
+            & + .more.only{ margin-top: 10px;}
+        }
+    }
+
+    // 58.个股动态
+    .stock-dynamic{
+        .stock-dynamic-list{
+            margin-top: -15px;
+            .list-item{
+                position: relative; padding: 15px 0 13px; font-size: 16px;
+                &::after{ @extend %bottom-border; border-bottom-color: #e3e4e5;}
+                &:last-of-type{
+                    margin-bottom: -10px;
+                    &::after{ display: none;}
+                }
+                .title{ margin-bottom: 10px; line-height: 1;}
+                .date{ position: absolute; right: 0; top: 15px; font-size: 12px; color: #999999;}
+                .tag{ padding-left: 15px; font-size: 12px;}
+            }
+            & + .more.only{ margin-top: 10px;}
+        }
+        .suggestion{
+            margin-top: 10px; padding-bottom: 8px;
+            .tip{ font-size: 14px; color: #999999;}
+            .sug-item{ display: block; margin-top: 12px; padding: 5px 0; line-height: 1; font-size: 17px; color: #f6933f;}
+        }
+        .sug-box{
+            .sug-box-item{
+                display: inline-block; width: 33%; margin: 3px 0; padding: 5px 0; text-align: center; cursor: pointer;
+                .stock-name{ display: block; font-size: 16px; color: #{$orange-font};}
+                .tag{ font-size: 12px; color: #{$gray-font};}
+            }
+        }
+    }
+
+    // 61 大宗交易
+    .stock-block-trading{
+        .sr-table{
+            td{ white-space: nowrap;}
+        }
+        .sr-table-scroller{ min-width: 260px;}
+        .stock-current-info{ margin-bottom: 10px;}
+    }
+
+    // 62 公司简介
+    .company-profile{
+        .stock-current-info{ margin-bottom: 10px;}
+        .company-table{
+            td{
+                padding: 4px 0; text-align: left; vertical-align: top; line-height: 1.4; font-size: 15px;
+                &::before{ display: none;}
+            }
+            .title{ width: 80px; color: #{$gray-font};}
+            .fold-content-wrap{
+                cursor: pointer;
+                .fold-content{
+                    display: -webkit-box; position: relative; padding-right: 4px;  -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis;
+                }
+                .tip{ padding: 8px 10px 0 0; text-align: right; color: #{$gray-font}; font-size: 14px;}
+            }
+        }
+        .info{
+            position: relative; margin-top: 10px; padding: 2px 6px; background: #f7f7f7;  overflow: hidden;
+            &::before{ @extend %left-border; border-left-color: #cfcfcf; top: 8px; bottom: 8px; left: 50%;}
+            .company-table{
+                float: left; width: 45%;
+                td{ font-size: 11px; text-align: right; white-space: nowrap;}
+                .title{ text-align: left;}
+                &:last-of-type{ float: right;}
+            }
+        }
+    }
+
+    // 63 融资融券
+    .stock-margin-trading{
+        .summary{ margin: -5px 0 10px; font-size: 15px; line-height: 1.6;}
+        .num{ padding: 0 0 0 4px;}
+        .sr-mark{
+            padding-left: 0; display: flex; justify-content: space-between;
+            span{
+                &::before{ top: 6px;}
+                &::after{ top: 8px;}
+            }
+            .m2{ margin-right: 0;}
+            .m1::before,
+            .m1::after{ background: #6291FF;}
+            .m2::before,
+            .m2::after{ background: #F99037;}
+        }
+    }
+
+    // 64 龙虎榜
+    .stock-longhu{
+        .info{
+            position: relative; margin: 15px 0 5px; padding-left: 84px; min-height: 21px; font-size: 16px;
+            &:first-of-type{ margin-top: -5px;}
+            &.sub-line{ margin: 10px 0 0;}
+
+            .title,
+            .sub-title{ position: absolute; left: 0; top: 0; width: 80px;}
+            .sub-title{ color: #{$gray-font};}
+            dd{ display: inline-block; line-height: 1.4;}
+            .reason{
+                margin-bottom: 5px;
+                &:last-of-type{ margin-bottom: 0;}
+            }
+        }
+        .sr-table-scroller{ min-width: 345px;}
+        .sr-table{
+            .t1{ width: 80px;}
+            .t2,
+            .v2{ text-align: left;}
+        }
+    }
+
+    // 66 筹码分布
+    .stock-cyq{
+        .info{
+            margin: -3px 0 4px; font-size: 0.3733rem;
+            .info-item{
+                position: relative; float: left; padding-left: 10px; line-height: 1;
+                .title{ color: #{$gray-font};}
+                .row{ margin-bottom: 10px;}
+                &:nth-child(odd){ width: 53%;}
+                &:nth-child(even){ width: 47%;}
+            }
+            .marker{
+                position: relative; 
+                &::before{
+                    position: absolute; left: -10px; top: 4px; content: ""; width: 5px; height: 5px; background: #a0a0a0; border-radius: 999em;
+                }
+            }
+            .orange{
+                &.marker::before,{ background: #f99037;}
+                .num{ color: #f99037;}
+            }
+            .blue{
+                &.marker::before{ background: #6291ff;}
+                .num{ color: #6291ff;}
+            }
+        }
+        .chart{
+            margin-bottom: -10px;
+        }
+    }
+
+    // 67 龙虎榜单
+    .longhu-list{
+        .sr-table-scroller{ min-width: 325px;}
+        .sr-table{
+            th{ white-space: normal; vertical-align: middle;}
+            .t4{ width: 70px;}
+        }
+    }
+
+    // 68 机构持仓
+    .stock-org-position{
+        .quarter-wrap{
+            position: relative; padding-left: 1.0667rem;
+            .axis{
+                position: absolute; left: 0; top: 58px; width: 1.0667rem; font-size: 0.32rem;
+                .item{ height: 30px; line-height: 29px;}
+            }
+            .quarter{
+                float: left; width: 50%; padding-right: 5px;
+                &:last-of-type{ padding-right: 0; padding-left: 5px;}
+                .title{ padding-bottom: 10px; font-size: 0.4rem; color: #F54646; text-align: center; line-height: 1;}
+                .sr-table{
+                    background: #f4f4f4; margin-bottom: 0;
+                    th,td{ text-align: center; font-size: 0.32rem;}
+                    th{
+                        &::before,
+                        &::after{ display: none;}
+                    }
+                    td{
+                        height: 30px; padding-top: 3px; padding-bottom: 2px; font-size: 0.3733rem;
+                        &::before{ display: none;}
+                    }
+                }
+            }
+        }
+    }
+
+    // 69 限售解禁
+    .stock-restricted-shares-lifted{
+        .sub-title{ margin-bottom: 10px; line-height: 1; font-size: 17px;}
+        .latest-info{ margin-bottom: 20px; font-size: 15px; opacity: 0.8;}
+        .sr-table-scroller-wrapper{ margin-top: -5px; padding-bottom: 0;}
+    }
+
+    // 71 大宗交易榜单
+    .stock-block-trading-list{
+        .sr-table-scroller{ min-width: 345px;}
+    }
+
+    // 74 营业收入
+    .stock-operating-income{
+        .sr-tab{
+            .tabs{ margin-top: 15px; margin-bottom: 10px;}
+        }
+        .sr-mark{
+            margin: 0; overflow: hidden;
+            .m1{ float: left;}
+            .m2{ float: right; margin-right: 0;}
+            .m1::before,
+            .m1::after{ background: #e94d2e;}
+            .m2::before,
+            .m2::after{ background: #5e83d6;}
+        }
+    }
+
+    // 77 限售解禁榜单
+    .lift-ban-list{
+        .sr-table-scroller{ width: 130%;}
+        .sr-table{
+            .v3,
+            .v4,
+            .v5,
+            .v6{ font-size: 17px; font-weight: normal; font-family: "Helvetica Neue", "Helvetica", "Microsoft Yahei", sans-serif;}
+            .v6{ font-size: 14px;}
+        }
+    }
+
+    // 79 个股快讯
+    .flash-news{
+        .news-list{
+            position: relative;
+            &:empty{ display: none;}
+            &::before{ @extend %left-border; top: 20px; left: 22px; bottom: -5px; border-color: #EF7F21;}
+            .list-item{
+                position: relative; padding: 14px 15px 14px 66px; margin: 0 -10px;
+                &::after{ @extend %bottom-border; border-bottom-color: #e3e4e5; width: auto; left: 66px; right: 15px;}
+                &:last-of-type{
+                    &::after{ border: none;}
+                }
+                .title{
+                    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; cursor: pointer; overflow: hidden; font-size: 15px;
+                    &.show-all{ -webkit-line-clamp: 100;}
+                    .state-tag{
+                        span{ display: inline-block; position: relative; top: -1px; padding: 1px 3px; background: #{$stock-go-eq-color}; font-size: 10px; color: #fff;}
+                        .stock-go-up{ background: #{$stock-go-up-color};}
+                        .stock-go-down{ background: #{$stock-go-down-color};}
+                        .stock-go-eq{ display: none;}
+                    }
+                    .wt{ font-weight: bold;}
+                }
+                .date{
+                    position: absolute; top: 10px; left: 12px; width: 40px; padding: 4px 0 18px; background: #fff; color: #EF7F21; font-size: 14px; text-align: center;
+                    &::before{ content: ""; position: absolute; left: 50%; bottom: 0; width: 14px; height: 14px; margin-left: -7px; background: #EF7F21; border-radius: 100%;}
+                    &::after{ content: ""; position: absolute; left: 50%; bottom: 6px; width: 5px; height: 5px; margin-left: -1px; border-left: 1px solid #ffffff; border-bottom: 1px solid #ffffff;}
+                }
+            }
+        }
+        .more.only{ margin-top: 20px!important;}
+    }
+
+    // QA 问答 视频
+    .qa{
+        strong{ font-weight: bold;}
+        p{ margin: 10px 0;}
+        ul,
+        ol{ margin: 10px 0; padding-left: 20px;}
+        ol{ padding-left: 23px;}
+        ul li{ list-style: disc;}
+        ol li{ padding-left: 0; list-style: decimal;}
+        table{ display: block; width: 100%; overflow-x: scroll; border-top: 1px solid #dddddd; border-left: 1px solid #dddddd;}
+        table td{ padding: 0 4px; white-space: nowrap; border-bottom: 1px solid #dddddd; border-right: 1px solid #dddddd;}
+        p:empty{ display: none;}
+        table th,
+        table tr:first-child td{ background: #eeeeee; text-align: center;}
+        a{ color: #{$orange-font};}
+        &.kefu{
+            .content{ padding: 0;}
+        }
+        .answer{
+            a{ color: #5770a9;}
+            .tts-title{ margin: 10px 0 8px; font-size: 17px;}
+            .tts-content{ margin-top: 8px; color: #333333; line-height: 25px; text-align: justify; font-size: 16px; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+        }
+    }
+    .qa-video{
+        a{ color: #{$orange-font};}
+        .title{ margin: 5px 0 5px; font-size: 16px;}
+        .desc{ margin: 7px 0; font-size: 16px;}
+        .video-content{
+            .tip{ color: #666666; font-size: 12px;}
+        }
+        .video-wrap{
+            position: relative; width: 100%; height: 145px;
+            .cover{ position: absolute; top: 0; bottom: 0; left: 0; width: 100%; background-size: cover; cursor: pointer; background-color: #dddddd; background-repeat: no-repeat;}
+            .mask{ position: absolute; top: 0; bottom: 0; left: 0; width: 100%; background: url("../images/video_play.png") center no-repeat rgba(0,0,0,.2); background-size: 48px 48px;}
+        }
+    }
+
+    // 地理位置
+    .lbs{
+        .loaction-list{
+            position: relative; margin-top: 2px; line-height: 1;
+            .list-item{ position: relative; height: 61px; padding: 14px 50px 13px 0; cursor: pointer;}
+            .list-item::after{ position: absolute; bottom: 0; width: 100%; content: ""; border-bottom: 1px solid #e3e4e5; transform: scaleY(.5);}
+            .list-item:last-child::after{ border: 0;}
+            .name{ height: 16px; margin-bottom: 7px; padding-top: 1px; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+            .address{ height: 13px; color: #808080; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+            .distance{ position: absolute; right: 0; bottom: 13px; color: #888888; font-size: 12px;}
+        }
+    }
+
+    // 模糊匹配
+    .fuzzy-suggestion{
+        .list-item{
+            display: flex; position: relative; min-height: 42px; align-items: center;
+            a{ display: block; width: 100%; padding: 8px 0; color: #3e6ba5;}
+            &::after{ position: absolute; top: 0; left: 0; width: 100%; content: ""; border-bottom: 1px solid #e3e4e5; transform: scaleY(.5); transform-origin: 0 0;}
+            &:last-of-type{ margin-bottom: -8px;}
+        }
+        .answer{
+            padding: 10px 0;
+            .tts-title{ margin-bottom: 8px; font-size: 17px;}
+            .tts-content{ color: #333333; line-height: 25px; text-align: justify; font-size: 16px;}
+        }
+        .fold-toggle{ margin-bottom: -10px;}
+    }
+    
+    // 搜索无结果的问题向导
+    .guide{
+        .guide-title{ margin: 10px 0 5px; text-align: justify; font-size: 15px; font-size: 17px; color: #808080;}
+        .nr-guide-container{
+            min-height: 260px;
+            .nr-guidetip{ margin-top: 10px; color: #808080;}
+            .animate-item{ opacity: 0; transition: all .2s linear 0s; transform: translate3d(0, 10px, 0);}
+            .item{
+                padding: 6px 0; font-size: 17px;
+                a{ color: #ff4900;}
+            }
+            .ai-slideIn{
+                .animate-item{ opacity: 1; transform: translate3d(0, 0, 0);}
+            }
+            .ai-slideOut{
+                .animate-item{ opacity: 0; transform: translate3d(0, -10px, 0);}
+            }
+            .questions{
+                position: relative; min-height: 230px;
+                .change-btn{
+                    position: absolute; bottom: 0; left: 0; width: 50%; height: 30px; padding-left: 22px; color: #a2a2a2; line-height: 31px; cursor: pointer; font-size: 15px;
+                    &::after{ position: absolute; top: 50%; left: 0; width: 16px; height: 16px; margin-top: -7px; background: url("../images/icon_change.png") no-repeat; background-size: 16px 16px; content: "";}
+                }
+            }
+            & + .etg-recommend{ margin-top: 20px;}
+        }
+        .swiper-container{
+            margin-bottom: -30px;
+            .swiper-slide{ height: 240px;}
+            .list-item{ display: block; margin: 0 0 15px 0; color: #fff;}
+            .swiper-pagination{ bottom: 20px;}
+        }
+    }
+
+    // 客服卡片
+    .customer-service-wrap{
+        .customer-service{
+            &.customer-service-connect-status{
+                position: relative;
+                .cs-btn{ color: #{$gray-font}; }
+                &.success,
+                &.done,
+                &.error,
+                &.timeout{
+                    .cancel-btn{ display: none;}
+                }
+                &.timeout{
+                    padding-right: 0;
+                }
+            }
+        }
+        .outside-tip,
+        .connecting-tip{
+            display: block; margin-top: 5px; padding-left: 15px; font-size: 12px; color: #{$gray-font};
+            &:empty{ display: none;}
+        }
+    }
+
+    // 客服评分
+    .customer-service-grade{
+        .grade{ position: relative;}
+        .title{ font-size: 17px;}
+        .grade-list{
+            margin: 12px 0;
+            .list-item{
+                display: flex; align-items: center; position: relative; min-height: 20px; padding: 8px 0; cursor: pointer;
+                &:last-of-type{ margin-bottom: 0;}
+                .radio{
+                    display: flex; align-items: center; justify-content: center; position: relative; width: 20px; height: 20px; margin-right: 8px;
+                    &::before{ content: ""; display: block; position: absolute; left: 0; top: 3px; width: 15px; height: 15px; border-radius: 100%; border: 1px solid #{$border-color}; background: #fff;}
+                    &::after{ display: none; content: ""; display: block; position: absolute; left: 4px; width: 8px; height: 5px; border-left: 1px solid #fff; border-bottom: 1px solid #fff; transform: rotate(-45deg);}
+                    &.selected{
+                        &::before{ border-color: #{$border-color}; background: #{$border-color};}
+                        &::after{ display: block;}
+                    }
+                }
+            }
+        }
+        .btn-group{
+            position: relative; display: flex; justify-content: center; align-items: center;
+        }
+        .submit-btn{ width: 110px; height: 36px; line-height: 35px; text-align: center; font-size: 14px; background: #f6933f; border-radius: 50px; color: #fff; cursor: pointer;}
+        .options{
+            display: flex; align-items: center; position: relative; min-height: 20px; padding: 8px 0; margin-top: 10px; font-size: 14px; color: #{$gray-font}; cursor: pointer;
+            .radio{
+                display: flex; align-items: center; justify-content: center; position: relative; width: 20px; height: 20px; margin-right: 8px;
+                &::before{ content: ""; display: block; position: absolute; left: 0; top: 3px; width: 15px; height: 15px; border-radius: 100%; border: 1px solid #{$border-color}; background: #fff;}
+                &::after{ display: none; content: ""; display: block; position: absolute; top: 7px; left: 4px; width: 8px; height: 5px; border-left: 1px solid #fff; border-bottom: 1px solid #fff; transform: rotate(-45deg);}
+            }
+            &.checked{
+                .radio{
+                    &::before{ border-color: #{$main-color}; background: #{$main-color};}
+                }
+            }
+        }
+    }
+    .customer-service-queue{
+        .cancel{ display: block; margin-top: 5px; color: #F54646; font-size: 14px;}
+    }
+}

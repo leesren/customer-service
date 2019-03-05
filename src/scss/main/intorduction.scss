@@ -1,0 +1,8 @@
+
+.intorduction-pannel{ display: none; box-sizing: border-box; position: relative; position: fixed; top: 50%; left: 50%; width: 7.4667rem; max-height: 10.6667rem; margin: -5.3333rem 0 0 -3.7333rem; padding: 20px 20px 60px; background: #25224d; border-radius: 3px; z-index: 101;}
+.intorduction-pannel::after{ content: ""; position: absolute; left: 0; right: 0; bottom: 60px; height: 30px; background-image: linear-gradient(rgba(37,34,77,0.00) 0%, #25224d 86%);}
+
+.intorduction-pannel .content{ position: relative; max-height: 8.2rem; padding-right: 15px; margin-right: -15px; color: #ffffff; overflow-y: scroll; -webkit-overflow-scrolling: touch; transform: translateZ(0);}
+.intorduction-pannel .content h2{ padding-top: 2px; line-height: 1; text-align: center; font-size: 21px;}
+.intorduction-pannel .content p{ margin: 20px 0; font-size: 15px; color: rgba(255,255,255,.8); text-indent: 2em;}
+.intorduction-pannel .close-btn{ display: flex; justify-content: center; align-items: center; position: absolute; right: 20px; bottom: 20px; left: 20px; height: 40px; border-radius: 50px; color: #ffffff; font-size: 17px; text-align: center; background-image: linear-gradient(-45deg, #7248ee 0%, #a04ef2 100%); cursor: pointer;}

@@ -1,0 +1,88 @@
+.swiper-container{ position: relative; margin-right: auto; margin-left: auto; overflow: hidden; z-index: 1;}
+.swiper-container-no-flexbox .swiper-slide{ float: left;}
+.swiper-container-vertical > .swiper-wrapper{ -webkit-box-orient: vertical; flex-direction: column;}
+.swiper-wrapper{ display: flex; box-sizing: content-box; position: relative; width: 100%; height: 100%; z-index: 1; transition-property: transform;}
+.swiper-container-android .swiper-slide,
+.swiper-wrapper{ transform: translate3d(0px, 0, 0);}
+.swiper-container-multirow > .swiper-wrapper{ -webkit-box-lines: multiple; flex-wrap: wrap;}
+.swiper-container-free-mode > .swiper-wrapper{ margin: 0 auto; transition-timing-function: ease-out;}
+.swiper-slide{ position: relative; width: 100%; height: 100%; flex-shrink: 0;}
+/* Auto Height */
+.swiper-container-autoheight,
+.swiper-container-autoheight .swiper-slide{ height: auto;}
+.swiper-container-autoheight .swiper-wrapper{ -webkit-box-align: start; align-items: flex-start; transition-property: transform, height;}
+/* Pagination Styles */
+.swiper-pagination{ position: absolute; text-align: center; transition: 300ms; transform: translate3d(0, 0, 0); z-index: 10;}
+.swiper-pagination.swiper-pagination-hidden{ opacity: 0;}
+/* Common Styles */
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets{ bottom: 10px; left: 0; width: 100%;}
+/* Bullets */
+.swiper-pagination-bullet{ display: inline-block; width: 8px; height: 8px; background: #000000; border-radius: 100%; opacity: .2;}
+button.swiper-pagination-bullet{ margin: 0; padding: 0; border: none; box-shadow: none; appearance: none;}
+.swiper-pagination-clickable .swiper-pagination-bullet{ cursor: pointer;}
+.swiper-pagination-white .swiper-pagination-bullet{ background: #ffffff;}
+.swiper-pagination-bullet-active{ background: #007aff; opacity: 1;}
+.swiper-pagination-white .swiper-pagination-bullet-active{ background: #ffffff;}
+.swiper-pagination-black .swiper-pagination-bullet-active{ background: #000000;}
+.swiper-container-vertical > .swiper-pagination-bullets{ top: 50%; right: 10px; transform: translate3d(0px, -50%, 0);}
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet{ display: block; margin: 5px 0;}
+/* .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{ margin: 0 5px;} */
+/* Progress */
+.swiper-pagination-progress{ position: absolute; background: rgba(0, 0, 0, .25);}
+.swiper-pagination-progress .swiper-pagination-progressbar{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #007aff; transform: scale(0); transform-origin: left top;}
+.swiper-container-rtl .swiper-pagination-progress .swiper-pagination-progressbar{ transform-origin: right top;}
+.swiper-container-horizontal > .swiper-pagination-progress{ top: 0; left: 0; width: 100%; height: 4px;}
+.swiper-container-vertical > .swiper-pagination-progress{ top: 0; left: 0; width: 4px; height: 100%;}
+.swiper-pagination-progress.swiper-pagination-white{ background: rgba(255, 255, 255, .5);}
+.swiper-pagination-progress.swiper-pagination-white .swiper-pagination-progressbar{ background: #ffffff;}
+.swiper-pagination-progress.swiper-pagination-black .swiper-pagination-progressbar{ background: #000000;}
+/* 3D Container */
+.swiper-container-3d{ perspective: 1200px;}
+.swiper-container-3d .swiper-wrapper,
+.swiper-container-3d .swiper-slide,
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom,
+.swiper-container-3d .swiper-cube-shadow{ transform-style: preserve-3d;}
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;}
+/* setting */
+#swiper-appearance{ opacity: 0; margin-bottom: 20px;}
+.history-placeholder #swiper-appearance{ margin-top: -10px;}
+.swiper-wrapper{ height: 12.8rem;}
+/* .swiper-slide{ height: 13.5rem;} */
+/* .swiper-slide{ overflow: hidden;} */
+.swiper-slide .title{ padding-top: 0.5333rem; color: #ffffff; line-height: 1; text-align: center; font-size: 0.7467rem;}
+.swiper-slide .sub-title{ margin: 0.3467rem 0; color: rgba(255,255,255,.40); text-align: center; font-size: 0.3733rem;}
+.swiper-slide .guide-questions{ position: relative; height: 8.5333rem; margin: 0; padding: .2rem 10px .4rem; background: #ffffff; border-radius: 3px;}
+.swiper-slide .guide-questions .questions{ position: relative; z-index: 10;}
+.swiper-slide .guide-questions::before{ position: absolute; right: 0; bottom: -5px; left: 0; height: 4rem; background: url("@/../images/guide_questions_bg.png") right no-repeat; background-size: contain; content: ""; z-index: 1;}
+.swiper-slide .guide-questions .item{ margin: 0.62rem 0; font-size: 0.5333rem;}
+.swiper-slide .guide-questions .item a{ display: block; width: 100%; padding: 0.2rem 0; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.swiper-slide .guide-questions .title{ display: none;}
+.swiper-slide .guide-questions .change-btn{ box-sizing: border-box; position: absolute; top: 7.46rem; left: 50%; width: 3.0667rem; height: 1.0667rem; margin-left: -1.52rem; padding-top: 0.2933rem; border: none; border-radius: 50px; color: #ffffff; line-height: 1; font-size: 0.48rem; overflow: hidden; box-shadow: 0 5px 5px 6px rgba(24,17,36,.15);}
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction{ bottom: 0;}
+.swiper-pagination-bullet{ width: 5px; height: 5px; margin: 0 3px; background: rgba(255,255,255,.20); opacity: 1;}
+.swiper-pagination-bullet-active{ width: 15px; background: rgba(255,255,255,.60); border-radius: 10px;}
+.swiper-slide .swiper-orange{ background-image: linear-gradient(134deg, #d9a93b 0%, #ee8c22 100%);}
+.swiper-slide .swiper-pink{ background-image: linear-gradient(134deg, #df2f96 0%, #ba104a 100%);}
+.swiper-slide .swiper-navy{ background-image: linear-gradient(134deg, #39aeb9 0%, #1472b4 100%);}
+.swiper-slide .swiper-red{ background-image: linear-gradient(134deg, #cf5343 0%, #bf2222 100%);}
+.swiper-slide .swiper-purple{ background-image: linear-gradient(134deg, #795EE7 0%, #523AC4 100%);}
+.swiper-slide .swiper-blue{ background-image: linear-gradient(134deg, #5E78DC 0%, #3D43BD 100%);}
+.swiper-slide .swiper-gold{ background-image: linear-gradient(134deg, #FF913B 0%, #E86C15 100%);}
+
+.swiper-slide .swiper-orange .change-btn{ background-image: linear-gradient(90deg, #EEC234 0%, #F89B2E 100%);}
+.swiper-slide .swiper-pink .change-btn{ background-image: linear-gradient(90deg, #fb409a 0%, #c02287 100%);}
+.swiper-slide .swiper-navy .change-btn{ background-image: linear-gradient(90deg, #2BC1CD 0%, #4689DE 100%);}
+.swiper-slide .swiper-red .change-btn{ background-image: linear-gradient(90deg, #F87E52 0%, #DB2F2E 100%);}
+.swiper-slide .swiper-purple .change-btn{ background-image: linear-gradient(90deg, #8A6EFF 0%, #5D3FE4 100%);}
+.swiper-slide .swiper-blue .change-btn{ background-image: linear-gradient(90deg, #5A99FF 0%, #4A56E8 100%);}
+.swiper-slide .swiper-gold .change-btn{ background-image: linear-gradient(90deg, #FEAF1E 0%, #E86B15 100%);}

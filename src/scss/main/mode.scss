@@ -1,0 +1,51 @@
+// H5
+.h5-mode{
+    .ask-bar{ box-sizing: border-box; position: fixed; bottom: 0; left: 0; width: 100%; font-size: 16px;}
+    .input-box{
+        &.keyboard{
+            display: none;
+            &.show{ display: block;}
+            height: 50px; padding: 7px 96px 9px 9px; background: #edeef2; border-top: 1px solid #dedfe0;
+            .input{ height: 35px; background: #ffffff; border-radius: 4px;}
+             input{ box-sizing: border-box; width: 100%; height: 100%; padding: 4px 40px 4px 8px; border-radius: 4px;}
+            .clear-btn{
+                display: none; position: absolute; top: 13px; right: 103px; width: 24px; height: 24px; background: #dddddd; border-radius: 100%; color: #ffffff; line-height: 25px; text-align: center; cursor: pointer; font-size: 12px;
+                &::before{ content: "✕";}
+            }
+            .submit-btn{ position: absolute; top: 7px; right: 9px; width: 80px; height: 35px; background: #ff4900; border-radius: 4px; color: #ffffff; line-height: 34px; text-align: center; cursor: pointer;}
+        }
+        &.voice{
+            display: none;
+            &.show{ display: block;}
+            height: 50px; padding: 7px 52px; background: #edeef2; border-top: 1px solid #dedfe0;
+            .record-btn{
+                height: 34px; background: #F5F5F5; border: 1px solid rgba(17,17,17,0.05); border-radius: 60px; font-size: 16px; color: rgba(17,17,17,0.80); text-align: center; line-height: 33px; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);
+                &.on-press{ background: rgba(17,17,17,0.10); border: 1px solid rgba(17,17,17,0.10);}
+                &.small{ font-size: 12px;}
+            }
+        }
+        .input-mode-toggle{ display: none; position: absolute; left: 7px; top: 7px; width: 40px; height: 37px; cursor: pointer; overflow: hidden;}
+        .close-btn{ position: absolute; top: 7px; right: 9px; width: 40px; height: 37px; cursor: pointer;}
+    }
+    .speech-status{
+        display: none; position: fixed; top: 50%; left: 50%; width: 150px; height: 150px; margin-top: -100px; margin-left: -75px; padding-top: 100px; border-radius: 10px; background: #fff; box-shadow: 0 5px 20px 3px rgba(0,0,0,0.05); color: #111; text-align: center;
+        .sound-wave-wrap{ position: absolute; top: 25px; left: 50%; width: 50px; height: 60px; margin-left: -25px;}
+    }
+    .scroll-wrapper{ bottom: 48px;}
+    .scroll-helper{ bottom: 68px;}
+    .ask-suggestion{ bottom: 48px;}
+
+    .onSpeech{
+        .speech-status{ display: block;}
+    }
+}
+
+// API
+.api-mode{
+    #swiper-appearance{ display: none;}
+}
+
+// Modal
+.modal-mode{
+    #swiper-appearance{ display: none;}
+}
